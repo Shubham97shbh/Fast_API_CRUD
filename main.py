@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, ValidationError
 import requests
+import jwt
 
 app = FastAPI()
 
@@ -31,7 +32,11 @@ def create_account(account: Account):
     except ValidationError as e:
         raise HTTPException(status_code=400, detail=str(e)) 
     accounts[account.account_id] = account
-    return {"message": "Account created successfully"}
+    encoded_jwt = jwt.encode({"account_id": account.account_id}, "secret", algorithm="HS256")
+    return {
+        "message": "Account created successfully save your token.",
+        "api_token": encoded_jwt
+            }
 
 # API to get an account by account id
 @app.get("/accounts/{account_id}")
@@ -93,19 +98,21 @@ def delete_account(account_id: str):
 
 # API to receive data and send it to destinations
 @app.post("/server/incoming_data")
-def receive_data(data: dict, app_secret_token: str):
+def receive_data(data: dict):
     if not data:
         raise HTTPException(status_code=400, detail="Invalid Data")
+    app_secret_token = data.get('app_secret_token', '')
     if not app_secret_token:
         raise HTTPException(status_code=401, detail="Unauthenticated")
     
     # Find the account based on the app secret token
     account = None
-    print(accounts)
-    for acc in accounts.values():
-        if acc.app_secret_token == app_secret_token:
-            account = acc
-            break
+    token = jwt.decode(app_secret_token, "secret", algorithms=["HS256"])
+    if token['account_id'] in accounts:
+            account = accounts[token['account_id']]
+    else:
+        raise HTTPException(status_code=201, detail="Token Doesn't Exist")
+
     if not account:
         raise HTTPException(status_code=401, detail="Unauthenticated")
     

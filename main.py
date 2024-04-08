@@ -31,8 +31,9 @@ def create_account(account: Account):
             raise HTTPException(status_code=400, detail="Account already exists")
     except ValidationError as e:
         raise HTTPException(status_code=400, detail=str(e)) 
-    accounts[account.account_id] = account
     encoded_jwt = jwt.encode({"account_id": account.account_id}, "secret", algorithm="HS256")
+    account.app_secret_token = encoded_jwt
+    accounts[account.account_id] = account
     return {
         "message": "Account created successfully save your token.",
         "api_token": encoded_jwt

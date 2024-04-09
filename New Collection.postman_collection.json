@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "e24aea14-7f10-4b50-b81f-4da9084cfc7a",
 		"name": "New Collection",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "34142614"
 	},
 	"item": [
@@ -18,19 +18,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"email\": \"example@example.com\",\n  \"account_id\": \"123456\",\n  \"account_name\": \"Example Account\",\n  \"app_secret_token\": \"abcd1234\",\n  \"website\": \"https://example.com\"\n}"
+					"raw": "{\n  \"email\": \"exawqewqsm1q2ple@exampssle.com\",\n  \"account_id\": \"1232222412133222226\",\n  \"account_name\": \"Shubham Account\",\n  \"app_secret_token\": \"abcd1234\",\n  \"website\": \"https://example.com\"\n}"
 				},
-				"url": {
-					"raw": "http://localhost:8000/accounts",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"accounts"
-					]
-				}
+				"url": "http://127.0.0.1:8000/accounts"
 			},
 			"response": []
 		},
@@ -40,15 +30,20 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/accounts/123456",
+					"raw": "http://localhost:8000/accounts?app_secret_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjoiMTIzMjIyMjQxMjEzMzIyMjIyNiJ9.NFgnszC9c06btTsZfxE-FUJp-GXePhg_Jh1zDbeEFA4",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
-						"accounts",
-						"123456"
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "app_secret_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjoiMTIzMjIyMjQxMjEzMzIyMjIyNiJ9.NFgnszC9c06btTsZfxE-FUJp-GXePhg_Jh1zDbeEFA4"
+						}
 					]
 				}
 			},
@@ -66,18 +61,23 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"email\": \"example@example.com\",\n  \"account_id\": \"123456\",\n  \"account_name\": \"Updated Account\",\n  \"app_secret_token\": \"abcd1234\",\n  \"website\": \"https://examp.com\"\n}"
+					"raw": "{\n  \"email\": \"exama22pssle@example.com\",\n  \"account_id\": \"12322112112456\",\n  \"account_name\": \"Shssssssawwqubha\",\n  \"website\": \"https://examp.com\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8000/accounts/123456",
+					"raw": "http://localhost:8000/accounts?app_secret_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjoiMTIzMjIyMjQxMjEzMzIyMjIyNiJ9.NFgnszC9c06btTsZfxE-FUJp-GXePhg_Jh1zDbeEFA4",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
-						"accounts",
-						"123456"
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "app_secret_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjoiMTIzMjIyMjQxMjEzMzIyMjIyNiJ9.NFgnszC9c06btTsZfxE-FUJp-GXePhg_Jh1zDbeEFA4"
+						}
 					]
 				}
 			},
@@ -87,17 +87,29 @@
 			"name": "http://localhost:8000/accounts/123456",
 			"request": {
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "app_secret_token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjoiMTIzMjIyMjQxMjEzMzIyMjIyNiJ9.NFgnszC9c06btTsZfxE-FUJp-GXePhg_Jh1zDbeEFA4",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"url": {
-					"raw": "http://localhost:8000/accounts/123456",
+					"raw": "http://localhost:8000/accounts?app_secret_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjoiMTIzMjIyMjQxMjEzMzIyMjIyNiJ9.NFgnszC9c06btTsZfxE-FUJp-GXePhg_Jh1zDbeEFA4",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
-						"accounts",
-						"123456"
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "app_secret_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjoiMTIzMjIyMjQxMjEzMzIyMjIyNiJ9.NFgnszC9c06btTsZfxE-FUJp-GXePhg_Jh1zDbeEFA4"
+						}
 					]
 				}
 			},
@@ -115,10 +127,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"url\": \"https://example.com/destination\",\n  \"http_method\": \"POST\",\n  \"headers\": { \n       \"APP_ID\": \"1234APPIDss1234\", \n       \"APP_SECTET\": \"enwdj3bshwer4ss3bjhjs9ereuinkjcnsiurew8s\", \n       \"ACTION\": \"user.update\", \n       \"Content-Type\": \"application/json\", \n       \"Accept\": \"*\" \n} \n\n}"
+					"raw": "{\n  \"url\": \"https://example.com/destination\",\n  \"http_method\": \"POST\",\n  \"headers\": { \n       \"APP_ID\": \"1234AxcPPIDss1234\", \n       \"APP_SECTET\": \"enwdj3bsdshwer4ss3bjhjs9ereuinkjcnsiurew8s\", \n       \"ACTION\": \"user.update\", \n       \"Content-Type\": \"application/json\", \n       \"Accept\": \"*\" \n} \n\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8000/accounts/123456/destinations",
+					"raw": "http://localhost:8000/accounts/destinations?app_secret_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjoiMTIzMjIyMjQxMjEzMzIyMjIyNiJ9.NFgnszC9c06btTsZfxE-FUJp-GXePhg_Jh1zDbeEFA4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -126,8 +138,13 @@
 					"port": "8000",
 					"path": [
 						"accounts",
-						"123456",
 						"destinations"
+					],
+					"query": [
+						{
+							"key": "app_secret_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjoiMTIzMjIyMjQxMjEzMzIyMjIyNiJ9.NFgnszC9c06btTsZfxE-FUJp-GXePhg_Jh1zDbeEFA4"
+						}
 					]
 				}
 			},
@@ -139,7 +156,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/accounts/123456/destinations",
+					"raw": "http://localhost:8000/accounts/destinations?app_secret_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjoiMTIzMjIyMjQxMjEzMzIyMjIyNiJ9.NFgnszC9c06btTsZfxE-FUJp-GXePhg_Jh1zDbeEFA4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -147,8 +164,13 @@
 					"port": "8000",
 					"path": [
 						"accounts",
-						"123456",
 						"destinations"
+					],
+					"query": [
+						{
+							"key": "app_secret_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjoiMTIzMjIyMjQxMjEzMzIyMjIyNiJ9.NFgnszC9c06btTsZfxE-FUJp-GXePhg_Jh1zDbeEFA4"
+						}
 					]
 				}
 			},
@@ -168,18 +190,7 @@
 					"mode": "raw",
 					"raw": "{\n  \"data\": {\n    \"key1\": \"value1\",\n    \"key2\": \"value2\"\n  },\n  \"app_secret_token\": \"abcd1234\"\n}"
 				},
-				"url": {
-					"raw": "http://localhost:8000/server/incoming_data",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"server",
-						"incoming_data"
-					]
-				}
+				"url": "http://localhost:8000/server/incoming_data"
 			},
 			"response": []
 		}
